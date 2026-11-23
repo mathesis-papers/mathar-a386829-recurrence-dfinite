@@ -5,13 +5,15 @@
 We prove the recurrence and D-finiteness conjectured by R. J. Mathar in OEIS A386829, FORMULA 5, revision 11 (2 November 2026), approved as revision 12. Its generating function is (7/sqrt(1-20z)-3)/(4+18z). A two-weight algebraic family proves the displayed recurrence conjectures in A386830 for n>=2 and A386831 for n>=4, and the exponential, reversion and hypergeometric identities in related entries. Coverage distinguishes written proofs, exact polynomial identities, finite coefficient checks and the pinned Lean declaration.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24407268](https://doi.org/10.5281/zenodo.24407268)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24407267](https://doi.org/10.5281/zenodo.24407267)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [mathar-a386829-recurrence-dfinite](https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-a386829-recurrence-dfinite?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-a386829-recurrence-dfinite?version=2
+Haobo Ma, Wenlin Zhang (2026). OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family. Mathesis, version 2. https://doi.org/10.5281/zenodo.24407268
 
 ## Statement progress
 
