@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-22"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-a386829-recurrence-dfinite?version=2"
+license: "CC-BY-4.0"

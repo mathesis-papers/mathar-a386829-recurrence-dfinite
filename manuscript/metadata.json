@@ -1,0 +1,15 @@
+{
+  "id": "mathar-a386829-recurrence-dfinite",
+  "revision": 2,
+  "problem_ids": ["mathar-a386829-recurrence-dfinite"],
+  "topic": "Mathar's recurrence in OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026), and related algebraic sequences",
+  "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We prove the recurrence and D-finiteness conjectured by R. J. Mathar in OEIS A386829, FORMULA 5, revision 11 (2 November 2026), approved as revision 12. Its generating function is (7/sqrt(1-20z)-3)/(4+18z). A two-weight algebraic family proves the displayed recurrence conjectures in A386830 for n>=2 and A386831 for n>=4, and the exponential, reversion and hypergeometric identities in related entries. Coverage distinguishes written proofs, exact polynomial identities, finite coefficient checks and the pinned Lean declaration.",
+  "summary": "Three Mathar recurrence conjectures, a two-weight algebraic family, and exact formula coverage for twelve OEIS entries, with polynomial certificates and finite coefficient checks.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
+}

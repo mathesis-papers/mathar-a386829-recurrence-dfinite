@@ -1,0 +1,132 @@
+{
+  "status": "pass",
+  "arithmetic": "exact integers and rational numbers",
+  "parameter_families": {
+    "r=1,u=3,v=2": [
+      0,
+      30
+    ],
+    "r=1,u=2,v=3": [
+      0,
+      30
+    ],
+    "r=1,u=1,v=2": [
+      0,
+      30
+    ],
+    "r=2,u=3,v=2": [
+      0,
+      30
+    ],
+    "r=2,u=2,v=3": [
+      0,
+      30
+    ],
+    "r=2,u=1,v=2": [
+      0,
+      30
+    ],
+    "r=3,u=3,v=2": [
+      0,
+      30
+    ],
+    "r=3,u=2,v=3": [
+      0,
+      30
+    ],
+    "r=3,u=1,v=2": [
+      0,
+      30
+    ]
+  },
+  "added_recurrence_ranges": {
+    "A386830": [
+      2,
+      30
+    ],
+    "A386831": [
+      4,
+      30
+    ],
+    "A386766": [
+      3,
+      30
+    ],
+    "A386769": [
+      2,
+      30
+    ]
+  },
+  "exponential_reversion_and_hypergeometric_ranges": [
+    1,
+    30
+  ],
+  "A386829": {
+    "coefficient_range": [
+      0,
+      80
+    ],
+    "recurrence_range": [
+      2,
+      80
+    ],
+    "inhomogeneous_equation_degrees": [
+      0,
+      79
+    ],
+    "homogeneous_equation_degrees": [
+      0,
+      78
+    ],
+    "algebraic_equation_degrees": [
+      0,
+      80
+    ],
+    "initial_terms": [
+      1,
+      13,
+      204,
+      3457,
+      61006,
+      1103598
+    ]
+  },
+  "A385669": {
+    "coefficient_range": [
+      0,
+      30
+    ],
+    "recurrence_range": [
+      2,
+      30
+    ]
+  },
+  "A386763": {
+    "coefficient_range": [
+      0,
+      30
+    ],
+    "initial_terms": [
+      1,
+      8,
+      114,
+      1862,
+      32246
+    ]
+  },
+  "A386830": {
+    "coefficient_range": [
+      0,
+      30
+    ],
+    "implicit_root_equation": "T*(1-5*T)^2=z"
+  },
+  "A386831": {
+    "coefficient_range": [
+      0,
+      30
+    ],
+    "implicit_root_equation": "T*(1-5*T)^3=z"
+  },
+  "scope": "Finite coefficient identities; proofs for all indices are in note.pdf."
+}

@@ -1,0 +1,48 @@
+{
+  "arithmetic": "integer polynomial identities",
+  "identities": {
+    "A386766": {
+      "correction": [
+        0,
+        -75,
+        300
+      ],
+      "polynomial_numerator": [
+        0
+      ],
+      "recurrence_onset": 3,
+      "theta_order": 1
+    },
+    "A386769": {
+      "polynomial_numerator": [
+        0
+      ],
+      "recurrence_onset": 2
+    },
+    "A386830": {
+      "correction": [
+        0,
+        -30
+      ],
+      "polynomial_numerator": [
+        0
+      ],
+      "recurrence_onset": 2,
+      "theta_order": 2
+    },
+    "A386831": {
+      "correction": [
+        0,
+        338670,
+        -181329840,
+        604049400
+      ],
+      "polynomial_numerator": [
+        0
+      ],
+      "recurrence_onset": 4,
+      "theta_order": 3
+    }
+  },
+  "status": "pass"
+}

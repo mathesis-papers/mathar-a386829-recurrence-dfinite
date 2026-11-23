@@ -1,0 +1,492 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Res}{\operatorname{Res}}
+\title{OEIS A386829, FORMULA 5, revisions 11--12\\
+(2 November 2026): Mathar's recurrence\\
+and an algebraic family}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{7 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove R. J. Mathar's recurrence and D-finiteness conjecture in
+OEIS A386829, FORMULA 5, revision 11 (2 November 2026), approved as revision 12.
+For Manyama's inclusive binomial sum, the ordinary generating function is
+$\bigl(7/\sqrt{1-20z}-3\bigr)/(4+18z)$; its first-order
+inhomogeneous differential equation gives the stated recurrence at every
+$n\geq2$. A formal change of variable also proves the entry's alternative
+formulas and gives a two-weight algebraic family. It also proves the
+displayed recurrence conjectures in A386830 and A386831, and the
+exponential, reversion and hypergeometric identities in related entries.
+\end{abstract}
+
+\section{The conjecture and its generating function}
+Seiichi Manyama defined A386829 in 2025 by the finite sum
+\begin{equation}\label{eq:definition}
+ a_n=\sum_{k=0}^{n}3^k2^{n-k}
+       \binom{2n+1}{k}\binom{2n-k}{n-k}\qquad(n\geq0).
+\end{equation}
+The summation includes both endpoints; in particular $a_0=1$ and $a_1=13$.
+Mathar's conjecture in FORMULA 5 of the entry~\cite{oeis829}
+is the recurrence in the following theorem, together with D-finiteness.
+The history records its addition at 08:27:56 EST on 2 November 2026
+(revision 11), followed by approval at 08:28:00 EST (revision 12).
+All generating functions below are formal power series over $\Q$.
+The square root denotes the unique series with constant coefficient one.
+
+\begin{theorem}\label{thm:main}
+For the sequence~\eqref{eq:definition}, put $A(z)=\sum_{n\geq0}a_nz^n$.
+Then
+\begin{equation}\label{eq:gf}
+ A(z)=\frac{7(1-20z)^{-1/2}-3}{4+18z},
+\end{equation}
+and, for every integer $n\geq2$,
+\begin{equation}\label{eq:recurrence}
+ 2n a_n+(20-31n)a_{n-1}+90(1-2n)a_{n-2}=0.
+\end{equation}
+Moreover, $A$ satisfies the nonzero homogeneous differential equation
+\begin{equation}\label{eq:ode}
+ (2-31z-180z^2)A''-(42+630z)A'-270A=0.
+\end{equation}
+\end{theorem}
+
+We first establish a coefficient identity which also explains the
+alternative formulas in the OEIS entry. The all-$r$, two-weight
+generalization is not posed in the cited entries. For an integer
+$r\geq1$ and $u,v\in\Q$ define
+\begin{equation}\label{eq:family}
+ d^{(r)}_n(u,v)=\sum_{k=0}^{n}u^kv^{n-k}
+ \binom{(r+1)n+1}{k}\binom{(r+1)n-k}{n-k}.
+\end{equation}
+Write $p=u+v$ and $q=u$. Expanding the negative binomial series gives
+\begin{align}
+ d^{(r)}_n(u,v)
+ &= [x^n]\frac{(1+ux)^{(r+1)n+1}}{(1-vx)^{rn+1}}\label{eq:coef1}\\
+ &= [y^n]\frac{1}{(1-qy)(1-py)^{rn+1}}\label{eq:coef2}\\
+ &= \sum_{k=0}^{n}p^kq^{n-k}\binom{rn+k}{k}.
+ \label{eq:sum2}
+\end{align}
+Here is a direct justification of the nontrivial change from
+\eqref{eq:coef1} to~\eqref{eq:coef2}. Write $[x^n]F(x)$ as the
+formal residue $\Res_{x=0} F(x)x^{-n-1}\,dx$, and substitute
+$x=y/(1-uy)$. The four contributions from the numerator, denominator,
+$x^{-n-1}$ and $dx$ have respective powers
+$-(r+1)n-1$, $rn+1$, $n+1$ and $-2$ of $1-uy$.
+Their sum is $-1$, giving exactly~\eqref{eq:coef2}.
+Formal residues are invariant under a substitution with leading term $y$:
+this follows on Laurent monomials from the vanishing residue of a
+derivative, and from $\Res x'(y)/x(y)=1$.
+Every coefficient calculation here is finite.
+
+The further substitution $y=t/(1+pt)$ in~\eqref{eq:coef2} gives
+\begin{equation}\label{eq:sum3}
+ d^{(r)}_n(u,v)
+ =[t^n]\frac{(1+pt)^{(r+1)n+1}}{1+vt}
+ =\sum_{k=0}^{n}p^k(-v)^{n-k}\binom{(r+1)n+1}{k}.
+\end{equation}
+Indeed, the resulting power of $1+pt$ in the residue is $(r+1)n+1$.
+Thus these equalities prove all four displayed alternative formulas
+for A386829, rather than assuming any one of them as its definition.
+
+\section{A formal coefficient formula and the proof}
+We use a standard form of Lagrange inversion, also recorded as
+Theorem 2.1.1, equation (2.1.5), in Gessel~\cite{gessel}.
+If $\Phi(0)=1$, $T=z\Phi(T)$, and $H$ is a power series, then
+\begin{equation}\label{eq:lagrange}
+ \sum_{n\geq0}z^n[t^n]H(t)\Phi(t)^n
+ =\frac{H(T)}{1-T\Phi'(T)/\Phi(T)}.
+\end{equation}
+For completeness, substitute $z=t/\Phi(t)$ in the residue for the
+$n$th coefficient on the right. Its derivative contributes
+$(1-t\Phi'(t)/\Phi(t))/\Phi(t)$; cancellation leaves
+$\Res H(t)\Phi(t)^nt^{-n-1}\,dt$, the coefficient on the left.
+The solution $T\in z\Q[[z]]$ exists uniquely by successive determination
+of its coefficients, so this substitution is valid also at $n=0$.
+
+Taking $\Phi(t)=(1-pt)^{-r}$ and
+$H(t)=1/((1-qt)(1-pt))$ in~\eqref{eq:lagrange} proves
+\begin{equation}\label{eq:general-gf}
+ D_r(z):=\sum_{n\geq0}d^{(r)}_n(u,v)z^n
+ =\frac{1}{(1-qT)(1-(r+1)pT)},\qquad
+ T(1-pT)^r=z.
+\end{equation}
+Every denominator on the right has constant coefficient one.
+For $r=1$, $p=5$ and $q=3$, put $s=\sqrt{1-20z}$.
+The solution with zero constant coefficient is $T=(1-s)/10$, hence
+\[
+ D_1(z)=\frac{10}{s(7+3s)}
+        =\frac{7/s-3}{4+18z},
+\]
+which proves~\eqref{eq:gf} for the literal sum~\eqref{eq:definition}.
+
+\begin{proof}[Completion of the proof of Theorem~\ref{thm:main}]
+Let $C=(1-20z)^{-1/2}$. Then $(1-20z)C'=10C$ and
+$(4+18z)A=7C-3$. Differentiating the latter equality and eliminating
+$C$ gives
+\begin{equation}\label{eq:inhom}
+ (2-31z-180z^2)A'-(11+270z)A=15.
+\end{equation}
+For $n\geq2$, its coefficient of $z^{n-1}$ is
+\[
+ 2na_n-\bigl(31(n-1)+11\bigr)a_{n-1}
+        -\bigl(180(n-2)+270\bigr)a_{n-2}=0,
+\]
+which is~\eqref{eq:recurrence}. The constant coefficient instead gives
+$2a_1-11a_0=15$, consistent with $a_0=1,a_1=13$.
+Differentiating~\eqref{eq:inhom} gives~\eqref{eq:ode}.
+Its leading polynomial has constant coefficient $2$, so it is a nonzero
+homogeneous polynomial differential equation. This proves D-finiteness
+with its usual meaning~\cite[\S1]{stanley}.
+\end{proof}
+
+In particular the square-root representation yields the algebraic identity
+\begin{equation}\label{eq:algebraic}
+ (1-20z)\bigl((4+18z)A(z)+3\bigr)^2=49.
+\end{equation}
+No assertion about analytic convergence is needed for these arguments.
+
+\section{Directly related sequences}
+The same calculation gives the following consequences for the four
+entries directly cross-referenced by A386829.
+
+\begin{corollary}\label{cor:siblings}
+Let $C=(1-20z)^{-1/2}$. The generating functions of
+A385669 and A386763 are respectively
+\begin{equation}\label{eq:siblings}
+ B(z)=\frac{4C-1}{3+4z},\qquad
+ E(z)=\frac{(1+15z)C+1}{2+9z}.
+\end{equation}
+The coefficients $b_n$ of $B$ satisfy $b_0=1,b_1=12$ and
+\begin{equation}\label{eq:siblingrec}
+ 3n b_n+(30-56n)b_{n-1}-40(2n-1)b_{n-2}=0
+ \qquad(n\geq2).
+\end{equation}
+The generating functions for A386830 and A386831 are the algebraic
+series $D_2$ and $D_3$ in~\eqref{eq:general-gf}, with $p=5,q=3$.
+Both are D-finite.
+\end{corollary}
+\begin{proof}
+For A385669~\cite{oeis669}, use $(u,v)=(2,3)$ and $r=1$ in
+\eqref{eq:family}--\eqref{eq:general-gf}. Rationalizing with
+$T=(1-s)/10$ gives $B$ in~\eqref{eq:siblings}.
+The identities $(3+4z)B=4C-1$ and $(1-20z)C'=10C$ give
+\[
+ (3-56z-80z^2)B'-(26+120z)B=10.
+\]
+Taking the coefficient of $z^{n-1}$ gives~\eqref{eq:siblingrec}.
+
+The definition of A386763~\cite{oeis763} is
+$e_n=\sum_{k=0}^n5^k3^{n-k}\binom{n+k-1}{k}$, with $e_0=1$.
+Here the coefficient at $n=k=0$ is understood as
+$[x^0](1-5x)^0=1$.
+Thus $e_n=[x^n](1-3x)^{-1}(1-5x)^{-n}$ for all $n\geq0$.
+Use $\Phi=(1-5t)^{-1}$ and $H=(1-3t)^{-1}$ in
+\eqref{eq:lagrange}. The result is $E=(1-5T)A$.
+Substitution of $T=(1-s)/10$ and $s^2=1-20z$ yields the displayed
+formula for $E$.
+
+The defining sums of A386830 and A386831~\cite{oeis830,oeis831}
+are exactly~\eqref{eq:family} with $(u,v)=(3,2)$ and $r=2,3$.
+Equation~\eqref{eq:general-gf} proves their algebraicity.
+To see D-finiteness directly, the field $\Q(z,T)$ is a finite-dimensional
+extension of $\Q(z)$, of degree at most $r+1$. Implicit differentiation
+of $T(1-5T)^r=z$ gives
+\[
+ T'=\frac{1}{(1-5T)^{r-1}(1-5(r+1)T)}\in\Q(z,T).
+\]
+Consequently differentiation preserves this field. The derivatives
+of $D_r$ are linearly dependent over $\Q(z)$; clearing denominators
+gives a nonzero homogeneous polynomial differential equation.
+This is the standard algebraic-to-D-finite implication
+\cite[Theorem 2.1]{stanley}, with its hypotheses explicit here.
+\end{proof}
+
+\section{Two further recurrence conjectures}
+Let $d_n=d^{(r)}_n(3,2)$ and $D=D_r$. The entries A386830 and A386831
+pose specific recurrences, not just D-finiteness. Both follow from
+\eqref{eq:general-gf}.
+
+\begin{corollary}\label{cor:recurrences}
+For A386830, Mathar's conjecture in FORMULA 5, revision 9
+(19 August 2025; approved as revision 10), holds for every $n\geq2$:
+\begin{multline}\label{eq:r2}
+8n(2n-3)d_n+6(-108n^2+207n-80)d_{n-1}\\
+ +405(3n-2)(3n-4)d_{n-2}=0.
+\end{multline}
+For A386831, Mathar's conjecture in FORMULA 5, revision 8
+(2 November 2026; approved as revision 9), holds for every $n\geq4$:
+\begin{equation}\label{eq:r3}
+ \sum_{j=0}^4 P_j(n)d_{n-j}=0,
+\end{equation}
+where
+\begin{align*}
+P_0(n)&=18744n(3n-1)(3n-2),\\
+P_1(n)&=203878391n^3-1040550807n^2+1658851582n-822702720,\\
+P_2(n)&=27(-252935041n^3+1277608165n^2\\
+ &\hspace{36mm}-1931547954n+777640080),\\
+P_3(n)&=3645(-38797609n^3+259381745n^2\\
+ &\hspace{36mm}-614869982n+523823440),\\
+P_4(n)&=-16309333800(2n-7)(4n-13)(4n-11).
+\end{align*}
+\end{corollary}
+\begin{proof}
+Put $Z=t(1-5t)^r$, $V=1-3t$, $W=1-5(r+1)t$, and $K=1-5t$.
+Under $z=Z$, the Euler derivative $\theta=z\,d/dz$ becomes
+\[
+ \mathcal L=\frac{tK}{W}\frac{d}{dt},\qquad D(Z)=\frac1{VW}.
+\]
+Here is an explicit polynomial identity proving each recurrence.
+Define $N_0=1$ and, for $k\geq0$,
+\begin{equation}\label{eq:certificate}
+N_{k+1}=tK\{VW N'_k+((k+1)3W+(2k+1)5(r+1)V)N_k\}.
+\end{equation}
+Differentiation proves
+$\mathcal L^k(1/(VW))=N_k/(V^{k+1}W^{2k+1})$.
+Write $P_j(X+j)=\sum_{k=0}^m c_{jk}X^k$. For $r=2$, use the
+three coefficient polynomials in~\eqref{eq:r2} and $m=2$; for $r=3$,
+use those in~\eqref{eq:r3} and $m=3$. Expansion gives the following
+identities in $\mathbb Z[t]$:
+\begin{equation}\label{eq:zero-polynomial}
+\sum_{j,k}c_{jk}Z^jN_kV^{m-k}W^{2(m-k)}
+ =R_r(Z)V^{m+1}W^{2m+1},
+\end{equation}
+where
+\[
+ R_2(z)=-30z,\qquad
+ R_3(z)=338670z-181329840z^2+604049400z^3.
+\]
+This equality is a finite polynomial identity: the displayed recurrence
+for $N_k$, the listed $P_j$, and ordinary multiplication specify every
+coefficient, with no unknown series. The supplied
+\texttt{verify\_polynomials.py} expands both sides using integer arithmetic.
+Since $V(0)=W(0)=1$, division in~\eqref{eq:zero-polynomial} is valid and gives
+\[
+ \sum_j z^jP_j(\theta+j)D(z)=R_r(z).
+\]
+The coefficient of $z^n$ on the left is exactly
+$\sum_jP_j(n)d_{n-j}$, with negative subscripts omitted. Since
+$\deg R_2<2$ and $\deg R_3<4$, this proves the stated onsets.
+In particular, the lower-index terms have not been silently discarded.
+\end{proof}
+
+\section{Shifted sums, reversions and secondary entries}
+The same argument covers more than the four immediate cross-references.
+For $r\geq1$, $u,v\in\Q$, $p=u+v$, $q=u$, define $e_0=1$ and
+\[
+ e_n=\sum_{k=0}^n p^kq^{n-k}\binom{rn+k-1}{k}\quad(n\geq1),
+ \qquad \Phi(x)=\frac{(1+ux)^{r+1}}{(1-vx)^r}.
+\]
+\begin{corollary}\label{cor:shifted}
+With $T(1-pT)^r=z$ and $T(0)=0$, the following identities hold:
+\begin{align}
+ e_n&=[x^n]\Phi(x)^n
+ =\sum_{k=0}^np^k(-v)^{n-k}\binom{(r+1)n}{k},\label{eq:eshift}\\
+ E_r(z)&=\sum_{n\geq0}e_nz^n
+ =\frac{1-pT}{(1-qT)(1-(r+1)pT)},\label{eq:egeneral}\\
+ \exp\left(\sum_{n\geq1}\frac{e_n}{n}z^n\right)
+ &=\frac{R(z)}z=\frac{1}{(1-qT)(1-pT)^r},
+ \quad R=z\Phi(R).\label{eq:exp}
+\end{align}
+The coefficients of $R/z$ are integers if $u,v$ are integers.
+For $n\geq1$ and $q\ne0$, $p/q\ne1$, the hypergeometric identity is
+\begin{multline}\label{eq:hypergeom}
+ e_n=q^n(1-p/q)^{-rn}\\
+ -p^n\binom{(r+1)n-1}{n}
+ \left({}_2F_1(1,(r+1)n;n+1;p/q)-1\right).
+\end{multline}
+The hypergeometric function here is a rational function of its argument,
+continued from its series at zero.
+\end{corollary}
+\begin{proof}
+The substitutions used in~\eqref{eq:coef1}--\eqref{eq:sum3}, with the
+numerator exponent reduced by one, give
+$e_n=[y^n](1-qy)^{-1}(1-py)^{-rn}$ and~\eqref{eq:eshift}.
+They are valid at $n=0$ with the displayed convention $e_0=1$.
+Formula~\eqref{eq:lagrange} now gives~\eqref{eq:egeneral}.
+Substitution shows $R=T/(1-qT)$ and $R=z\Phi(R)$, proving the
+second equality in~\eqref{eq:exp}. For the first, Lagrange inversion gives
+\[
+ [z^n]\log\Phi(R)
+ =\frac1n[x^{n-1}]\frac{\Phi'(x)}{\Phi(x)}\Phi(x)^n
+ =\frac1n[x^n]\Phi(x)^n=\frac{e_n}{n}.
+\]
+All logarithms have constant coefficient zero. Exponentiation proves
+\eqref{eq:exp}. Integer coefficients follow recursively from
+$R=z\Phi(R)$, since $\Phi\in\mathbb Z[[x]]$ for integral $u,v$.
+
+For~\eqref{eq:hypergeom}, put $M=(r+1)n$. The identity
+\[
+ \binom{M-1}{n}\frac{(M)_k}{(n+1)_k}
+ =\binom{M+k-1}{n+k}
+\]
+identifies the hypergeometric tail with the tail of
+$(1-x)^{-rn}=\sum_{j\geq0}\binom{rn+j-1}{j}x^j$ after $j=n$.
+Subtract the finite initial segment and multiply by $q^n$, with $x=p/q$.
+This proves the formula first near zero. Its rational continuation is
+explicit from Euler's transformation~\cite[15.8.1]{dlmf}:
+\[
+ {}_2F_1(1,M;n+1;x)
+ =(1-x)^{-rn}\sum_{k=0}^{rn-1}
+       \frac{n}{n+k}(-1)^k\binom{rn-1}{k}x^k.
+\]
+Thus no branch choice beyond rational continuation is involved, and
+evaluation at $x=5/3$ is legitimate.
+\end{proof}
+
+For $(u,v)=(3,2)$ and $r=1,2,3$, these are precisely the coefficient,
+exponential/reversion and Spezia hypergeometric formulas in A386763,
+A386764 and A386765~\cite{oeis763,secondary}. For $(u,v)=(2,3)$,
+the family $D_r$ includes A385669, A385670 and A385671; $E_1$ is A386766.
+Their source identities follow from the same substitutions.
+
+Two further displayed source recurrences follow by direct differentiation:
+if $f_n$ is A386766, then, for $n\geq3$,
+\begin{multline}\label{eq:766}
+9nf_n+6(-18n-5)f_{n-1}+80(-17n+37)f_{n-2}\\
+ +800(-2n+5)f_{n-3}=0.
+\end{multline}
+Indeed, use~\eqref{eq:certificate} with $r=1$, $q=2$, $V=1-2t$,
+replace $3W$ by $2W$, and set $N_0=1-5t$. For the coefficient
+polynomials in~\eqref{eq:766}, identity~\eqref{eq:zero-polynomial}
+has $m=1$ and $R(z)=-75z+300z^2$.
+If $w_n=[z^n]R(z)/z$ for $(u,v)=(3,2),r=1$, then $w_n$ is A386769 and
+\begin{equation}\label{eq:769}
+ 2(n+1)w_n+(-31n+29)w_{n-1}+90(-2n+1)w_{n-2}=0\quad(n\geq2).
+\end{equation}
+To verify this, substitute $F=1/((1-3t)(1-5t))$ and $z=t(1-5t)$ in
+\[
+ (2-31z-180z^2)\theta F+(2-2z-270z^2)F=2+30z;
+\]
+clearing denominators gives a polynomial identity. Coefficient
+extraction proves~\eqref{eq:769}. Finally Lagrange inversion gives
+$w_n=(n+1)^{-1}[x^n]\Phi(x)^{n+1}$, which proves both of the
+coefficient formulas in A386769.
+
+For the secondary entry A383888 take $(u,v)=(1,2),r=1$ in
+Corollary~\ref{cor:shifted}. It gives every displayed finite-sum,
+coefficient, exponential and hypergeometric identity there. It also
+gives Kotesovec's stated asymptotic. In fact, with $s=\sqrt{1-12z}$,
+\[
+ E_1(z)=\frac{3(1+s)}{s(5+s)}
+       =\frac{3}{5s}+\frac{12}{5(5+s)}.
+\]
+The square root with $s(0)=1$ is analytic on the plane slit along
+$[1/12,\infty)$ and has positive real part there, so $5+s$ does not vanish.
+At the unique dominant singularity $z=1/12$, the second summand has
+a convergent expansion in $s$, whose first nonanalytic term is a
+constant times $s$. The binomial coefficient asymptotic (or the
+transfer theorem~\cite[Theorems VI.1 and VI.3]{flajolet}) therefore gives
+\[
+ [z^n]E_1(z)\sim\frac{3\,12^n}{5\sqrt{\pi n}},
+\]
+exactly the FORMULA contribution dated 4 August 2025.
+
+\section{Coverage and verification scope}
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.30\linewidth}p{0.61\linewidth}@{}}
+\toprule
+Source item & Mathematical coverage\\
+\midrule
+A386829, NAME & Proved: literal inclusive sum; Theorem~\ref{thm:main}.\\
+A386829, FORMULA 1--4 & Proved: all four identities in
+\eqref{eq:coef1}--\eqref{eq:sum3}, with $r=1,u=3,v=2$.\\
+A386829, Mathar's conjecture, FORMULA 5 & Proved: recurrence for every $n\geq2$,
+and D-finiteness; Theorem~\ref{thm:main}.\\
+A385669 & Proved: four source identities. Explicit generating function
+and recurrence: not posed; proved in Corollary~\ref{cor:siblings}.\\
+A386830, FORMULA 1--5 & Proved: four identities, D-finiteness and the
+conjectured recurrence for $n\geq2$; Corollary~\ref{cor:recurrences}.\\
+A386831, FORMULA 1--5 & Proved: four identities, D-finiteness and the
+conjectured recurrence for $n\geq4$; Corollary~\ref{cor:recurrences}.\\
+A386763; A386764--765 & Proved: all five source formulas, including
+Spezia's hypergeometric representations ($n\geq1$);
+Corollary~\ref{cor:shifted}.\\
+A385670--671 & Proved: the four source identities. Algebraicity for
+the swapped weights: not posed; proved in \eqref{eq:general-gf}.\\
+A386766 & Proved: all source formulas, including Mathar's stated
+recurrence ($n\geq3$); \eqref{eq:766}.\\
+A386769 & Proved: the two coefficient formulas and Mathar's stated
+recurrence ($n\geq2$); \eqref{eq:exp}, \eqref{eq:769}.\\
+A383888 & Proved: its five identities and Kotesovec's asymptotic;
+Corollary~\ref{cor:shifted} and the displayed singular expansion.\\
+General parameter family and explicit generating functions & Not posed;
+proved in \eqref{eq:general-gf} and Corollary~\ref{cor:shifted}.\\
+Other entries reached only by further cross-references & Not covered;
+the table specifies the twelve entries treated here.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The declaration
+\href{https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean#L233}{\texttt{D5.S3.ArithSums.MatharA386829.result}}
+states the full recurrence~\eqref{eq:recurrence} for the literal sum,
+together with existence of a nonzero homogeneous differential equation
+for its rational formal generating series. The same file's
+\texttt{homogeneous\_equation} gives~\eqref{eq:ode}.
+The closed generating function, its parameter extension and all sibling
+statements have written proofs above. In particular, the pinned declaration
+does not cover \eqref{eq:r2} or \eqref{eq:r3}.
+The supplied \texttt{verify.py}
+checks exact integer coefficients through $n=80$ for the main sum,
+the recurrence, the differential equations and~\eqref{eq:algebraic};
+it also checks nine choices of $(r,u,v)$ through $n=30$, their
+shifted and reversion identities, the hypergeometric formulas for
+$1\leq n\leq30$, and the added recurrences through $n=30$.
+These finite coefficient checks are distinct from the proofs for all indices.
+The separate \texttt{verify\_polynomials.py} verifies the full polynomial
+identities in the recurrence proofs, not a sample of their values.
+
+\begin{thebibliography}{99}
+\bibitem{oeis829} S. Manyama, OEIS A386829, NAME and FORMULA,
+revisions 11--12, 2 November 2026; recurrence conjecture contributed by
+R. J. Mathar in revision 11 on 2 November 2026.
+\url{https://oeis.org/A386829}.
+\bibitem{oeis669} S. Manyama, OEIS A385669, NAME and FORMULA,
+revision 13, 4 August 2025. \url{https://oeis.org/A385669}.
+\bibitem{oeis763} S. Manyama, OEIS A386763, NAME and FORMULA,
+revision 19, 3 August 2025. \url{https://oeis.org/A386763}.
+\bibitem{oeis830} S. Manyama, OEIS A386830, NAME and FORMULA,
+revision 10, 19 August 2025; recurrence conjecture by R. J. Mathar.
+\url{https://oeis.org/A386830}.
+\bibitem{oeis831} S. Manyama, OEIS A386831, NAME and FORMULA,
+revision 9, 2 November 2026; recurrence conjecture by R. J. Mathar.
+\url{https://oeis.org/A386831}.
+\bibitem{secondary} S. Manyama, secondary OEIS entries, NAME and FORMULA:
+\href{https://oeis.org/A385670}{A385670}, revision 11, 4 August 2025;
+\href{https://oeis.org/A385671}{A385671}, revision 13, 4 August 2025;
+\href{https://oeis.org/A386764}{A386764}, revision 21, 3 August 2025;
+\href{https://oeis.org/A386765}{A386765}, revision 21, 3 August 2025;
+\href{https://oeis.org/A386766}{A386766}, revision 15, 3 August 2025;
+\href{https://oeis.org/A386769}{A386769}, revision 14, 3 August 2025;
+\href{https://oeis.org/A383888}{A383888}, revision 38, 4 August 2025.
+The hypergeometric representations are due to S. Spezia (2--3 August 2025),
+the recurrences to R. J. Mathar (3 August 2025), and the A383888 asymptotic
+to V. Kotesovec (4 August 2025).
+\bibitem{gessel} I. M. Gessel, Lagrange inversion,
+\emph{J. Combin. Theory Ser. A} \textbf{144} (2016), 212--249.
+\href{https://doi.org/10.1016/j.jcta.2016.06.018}{doi:10.1016/j.jcta.2016.06.018};
+\href{https://arxiv.org/abs/1609.05988}{arXiv:1609.05988v1},
+Theorem 2.1.1, equation (2.1.5).
+\bibitem{stanley} R. P. Stanley, Differentiably finite power series,
+\emph{European J. Combin.} \textbf{1} (1980), 175--188,
+Theorem 2.1, p.~178.
+\href{https://doi.org/10.1016/S0195-6698(80)80051-5}{doi:10.1016/S0195-6698(80)80051-5}.
+\bibitem{flajolet} P. Flajolet and R. Sedgewick,
+\emph{Analytic Combinatorics}, Cambridge University Press, 2009,
+Theorems VI.1 and VI.3.
+\href{https://ac.cs.princeton.edu/home/}{Author book site}.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions,
+\S15.8(i), equation (15.8.1), Euler transformation.
+\href{https://dlmf.nist.gov/15.8.E1}{https://dlmf.nist.gov/15.8.E1}.
+\end{thebibliography}
+\bigskip\noindent\small
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

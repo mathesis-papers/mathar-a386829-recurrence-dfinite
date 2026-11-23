@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:mathar-a386829-recurrence-dfinite:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
+      },
+      "lineage": "collected:mathar-a386829-recurrence-dfinite:s1",
+      "macros": {
+        "\\Q": "\\mathbb{Q}",
+        "\\Res": "\\operatorname{Res}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-a386829-recurrence-dfinite",
+      "scope": "in_scope",
+      "statement": "For the sequence~\\eqref{eq:definition}, put $A(z)=\\sum_{n\\geq0}a_nz^n$.\nThen\n\\begin{equation}\n A(z)=\\frac{7(1-20z)^{-1/2}-3}{4+18z},\n\\end{equation}\nand, for every integer $n\\geq2$,\n\\begin{equation}\n 2n a_n+(20-31n)a_{n-1}+90(1-2n)a_{n-2}=0.\n\\end{equation}\nMoreover, $A$ satisfies the nonzero homogeneous differential equation\n\\begin{equation}\n (2-31z-180z^2)A''-(42+630z)A'-270A=0.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-a386829-recurrence-dfinite"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:mathar-a386829-recurrence-dfinite:2:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
+      },
+      "lineage": "collected:mathar-a386829-recurrence-dfinite:s2",
+      "macros": {
+        "\\Q": "\\mathbb{Q}",
+        "\\Res": "\\operatorname{Res}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-a386829-recurrence-dfinite",
+      "scope": "in_scope",
+      "statement": "Let $C=(1-20z)^{-1/2}$. The generating functions of\nA385669 and A386763 are respectively\n\\begin{equation}\n B(z)=\\frac{4C-1}{3+4z},\\qquad\n E(z)=\\frac{(1+15z)C+1}{2+9z}.\n\\end{equation}\nThe coefficients $b_n$ of $B$ satisfy $b_0=1,b_1=12$ and\n\\begin{equation}\n 3n b_n+(30-56n)b_{n-1}-40(2n-1)b_{n-2}=0\n \\qquad(n\\geq2).\n\\end{equation}\nThe generating functions for A386830 and A386831 are the algebraic\nseries $D_2$ and $D_3$ in~\\eqref{eq:general-gf}, with $p=5,q=3$.\nBoth are D-finite.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-a386829-recurrence-dfinite"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:mathar-a386829-recurrence-dfinite:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
+      },
+      "lineage": "collected:mathar-a386829-recurrence-dfinite:s3",
+      "macros": {
+        "\\Q": "\\mathbb{Q}",
+        "\\Res": "\\operatorname{Res}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-a386829-recurrence-dfinite",
+      "scope": "in_scope",
+      "statement": "For A386830, Mathar's conjecture in FORMULA 5, revision 9\n(19 August 2025; approved as revision 10), holds for every $n\\geq2$:\n\\begin{multline}\n8n(2n-3)d_n+6(-108n^2+207n-80)d_{n-1}\\\\\n +405(3n-2)(3n-4)d_{n-2}=0.\n\\end{multline}\nFor A386831, Mathar's conjecture in FORMULA 5, revision 8\n(2 November 2026; approved as revision 9), holds for every $n\\geq4$:\n\\begin{equation}\n \\sum_{j=0}^4 P_j(n)d_{n-j}=0,\n\\end{equation}\nwhere\n\\begin{align*}\nP_0(n)&=18744n(3n-1)(3n-2),\\\\\nP_1(n)&=203878391n^3-1040550807n^2+1658851582n-822702720,\\\\\nP_2(n)&=27(-252935041n^3+1277608165n^2\\\\\n &\\hspace{36mm}-1931547954n+777640080),\\\\\nP_3(n)&=3645(-38797609n^3+259381745n^2\\\\\n &\\hspace{36mm}-614869982n+523823440),\\\\\nP_4(n)&=-16309333800(2n-7)(4n-13)(4n-11).\n\\end{align*}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-a386829-recurrence-dfinite"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:mathar-a386829-recurrence-dfinite:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
+      },
+      "lineage": "collected:mathar-a386829-recurrence-dfinite:s4",
+      "macros": {
+        "\\Q": "\\mathbb{Q}",
+        "\\Res": "\\operatorname{Res}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-a386829-recurrence-dfinite",
+      "scope": "in_scope",
+      "statement": "With $T(1-pT)^r=z$ and $T(0)=0$, the following identities hold:\n\\begin{align}\n e_n&=[x^n]\\Phi(x)^n\n =\\sum_{k=0}^np^k(-v)^{n-k}\\binom{(r+1)n}{k},\\\\\n E_r(z)&=\\sum_{n\\geq0}e_nz^n\n =\\frac{1-pT}{(1-qT)(1-(r+1)pT)},\\\\\n \\exp\\left(\\sum_{n\\geq1}\\frac{e_n}{n}z^n\\right)\n &=\\frac{R(z)}z=\\frac{1}{(1-qT)(1-pT)^r},\n \\quad R=z\\Phi(R).\n\\end{align}\nThe coefficients of $R/z$ are integers if $u,v$ are integers.\nFor $n\\geq1$ and $q\\ne0$, $p/q\\ne1$, the hypergeometric identity is\n\\begin{multline}\n e_n=q^n(1-p/q)^{-rn}\\\\\n -p^n\\binom{(r+1)n-1}{n}\n \\left({}_2F_1(1,(r+1)n;n+1;p/q)-1\\right).\n\\end{multline}\nThe hypergeometric function here is a rational function of its argument,\ncontinued from its series at zero.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-a386829-recurrence-dfinite"
+    }
+  ]
+}
