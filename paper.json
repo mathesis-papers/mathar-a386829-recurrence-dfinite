@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24407267",
     "current_version": 2,
     "doi": "10.5281/zenodo.24407268",
+    "kind": "note",
     "lean_source": {
       "revision": "074df09ddbbef1843ddb383577bfaa827f753e36",
       "url": "https://github.com/the-omega-institute/trureturing/blob/074df09ddbbef1843ddb383577bfaa827f753e36/D5/S3/ArithSums/MatharA386829.lean"
@@ -55,10 +56,12 @@
     "title": "OEIS A386829, FORMULA 5, revisions 11–12 (2 November 2026): Mathar's recurrence and an algebraic family",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-22T22:17:01.219868202Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "mathar-a386829-recurrence-dfinite"

@@ -32,9 +32,9 @@
     "manuscript/verification.json": "42ff1f07e89601c2156f9089132524bd275b35159a8800c272f914931a632469",
     "manuscript/verify.py": "9de2bcf77dbb91afffb4b6f1f595bdf4f00a84e977cde112a5e480b6c721dc4c",
     "manuscript/verify_polynomials.py": "9c8b349e0cdffd1bea95f55178dd98b74a0f708734d9f27d424c5504b5c17157",
-    "paper.json": "f6e6c45c967e1f5f780b54f90f56cce607884dc2badfc11d12425f509d90ac4f",
+    "paper.json": "573549797dbf648e07ead09396bea284835809d0c4dab5569082fbc36aff311b",
     "paper.pdf": "b6477ca54ff08edd9b37932d560859af208b1423fbfcd0c32f94f289125dee11",
     "source.archive": "5d654c5b86d3dede1af12a5ec72165c99d33670f6a2ea83791c9002528dea0d3"
   },
-  "snapshot_identity": "fb1c2ab8d11de829484508a660d96d2e6a29c617ebf8695c6b655f4b2f7f0f31"
+  "snapshot_identity": "541cef38504764ee0bd70fb65b26cd04b912ccbbc57c80438781fae02dc0ac3c"
 }
